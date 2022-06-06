@@ -3,15 +3,19 @@
    <head>
       {% load static %}
       <meta charset="utf-8">
-      <title>Team Interface</title>
-      <link rel="stylesheet" href="{%  static  'css/index.css'  %}">
+      <title>alloader</title>
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">  <!--"{%  static  'css/index.css'  %}"-->
+      <link rel="stylesheet" href="{% static 'css/search_bar.css' %}">
+      <link rel="stylesheet" href="{% static 'css/services section.css' %}"  />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://kit.fontawesome.com/65d87443ab.js" crossorigin="anonymous"></script>
    </head>
    <body>
+       <!-- navigator -->
       <nav>
          <div class="logo">
-            teamInterface
+            alloader
          </div>
          <input type="checkbox" id="click">
          <label for="click" class="menu-btn">
@@ -20,18 +24,90 @@
          <ul>
             <li><a class="active" href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Tools</a></li>
+            <li><a href="#">How its works </a></li>
+            <li><a href="#">Updates</a></li>
          </ul>
       </nav>
-      <div class="content">
-         <div>
-           teamInterface
-         </div>
-         <div>
-            Underconstruction....
-         </div>
+      <!-- search bar  -->
+      <div class="container">
+         <form action="/download" method="post">{% csrf_token %}
+            <div class="searchbar">
+                  <div class="wrapper">
+                     <i class="fa-solid fa-down load"></i>
+                     <input name="url" type="text" placeholder="Past link here.." required="required">
+                     <i class="fa-solid fa-xmark"></i>
+                  </div>
+            </div>
+            <div class="download">
+                  <button type="submit">
+                     <i class="fa-solid fa-download"></i>Start
+                  </button>
+            </div>
+         </form>
+        
       </div>
+
+      <!-- section started -->
+      <section>
+        <div class="row">
+            <h2 class="section-heading" aria-hidden="false">Our Tools</h2>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fa-brands fa-instagram"></i>                    </div>
+                    <h3>Reel downloader</h3>
+                    <p>download your video by video link</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <h3>Titok downloader</h3>
+                    <p>download your video by video link</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3>Likee downloader</h3>
+                    <p>download your video by video link</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                    <h3>Youtube downloader</h3>
+                    <p>download your video by video link</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fa-brands fa-pinterest"></i>
+                    </div>
+                    <h3>Pinterest downloader</h3>
+                    <p>download your video by video link</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <h3>Facebook downloader</h3>
+                    <p>download your video by video link</p>
+                </div>
+            </div>
+        </div>
+    </section>
    </body>
 </html>
